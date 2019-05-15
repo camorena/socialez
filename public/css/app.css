@@ -15,6 +15,128 @@
   font-style: normal;
 }
 
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+body{font-family: 'Raleway', sans-serif ;}
+.tab-style{
+font-size:20px;
+width:50%;
+background-color:#f2f2f2;
+  text-align:center;
+  
+}
+.nav-tabs > li > a {
+    margin-right: 0px;
+    color:grey;
+}
+.group2 { 
+    position: relative; 
+    margin-top: 16px; 
+}
+.btn-block{margin-top:20px;
+margin-bottom:20px;
+font-size:18px;}
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {   background-color:#e5ecf4;
+color:#4a89dc;}
+.login-shadow{-webkit-box-shadow: 5px -5px 6px 0px rgba(82,82,82,0.52);
+-moz-box-shadow: 5px -5px 6px 0px rgba(82,82,82,0.52);
+box-shadow: 5px -5px 6px 0px rgba(82,82,82,0.52);
+  z-index:1;
+   
+}
+.signup-shadow{-webkit-box-shadow: -5px 0px 6px 0px rgba(82,82,82,0.52);
+-moz-box-shadow: -5px -5px 6px 0px rgba(82,82,82,0.52);
+box-shadow: -5px 0px 6px 0px rgba(82,82,82,0.52);
+  
+}
+.modal-header{background-color:#e5ecf4;}
+.group { 
+    position: relative; 
+    margin-top: 30px; 
+}
+.input {
+    font-size: 18px;
+    padding: 10px 10px 10px 5px;
+    -webkit-appearance: none;
+    display: block;
+    background: none;
+    color: #636363;
+    width: 100%;
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid #757575;
+}
+.input:focus { outline: none; }
+/* Label */
+.label {
+    color: #757575; 
+    font-size: 18px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: -10px;
+    top: 10px;
+    transition: all 0.2s ease;
+}
+/* active */
+.input:focus ~ .label, .input.used ~ .label {
+    top: -20px;
+  transform: scale(.75); left:-15px;
+    /* font-size: 14px; */
+    color: #4a89dc;
+}
+/* Underline */
+.bar {
+    position: relative;
+    display: block;
+    width: 100%;
+}
+.bar:before, .bar:after {
+    content: '';
+    height: 2px; 
+    width: 0;
+    bottom: 1px; 
+    position: absolute;
+    background: #4a89dc; 
+    transition: all 0.2s ease;
+}
+.bar:before { left: 50%; }
+.bar:after { right: 50%; }
+/* active */
+.input:focus ~ .bar:before, .input:focus ~ .bar:after { width: 50%; }
+/* Highlight */
+.highlight {
+    position: absolute;
+    height: 60%; 
+    width: 100px; 
+    top: 25%; 
+    left: 0;
+    pointer-events: none;
+    opacity: 0.5;
+}
+/* active */
+.input:focus ~ .highlight {
+    animation: inputHighlighter 0.3s ease;
+}
+@media  screen and (max-width: 767px) and (min-width: 576px){
+  #myModal{margin-left:20%;
+            margin-right:20%;}
+  #forgot-password{margin-left:20%;
+            margin-right:20%;}
+} 
+@media screen and (min-width: 768px) {
+    
+    #myModal .modal-dialog  {width:500px;}
+  
+  #forgot-password .modal-dialog{width:500px;}
+  
+  .modal-body{padding-left:50px;
+              padding-right:50px;}
+}
+.modal-body{background-image:url('http://res.cloudinary.com/rinma/image/upload/v1500489833/Airplane-flying-desktop-pictureproba2_rlcced.jpg');
+background-size:cover;
+z-inedx:4;}
+em{display:none;}
+
 /* line 4, ../bower_components/font-awesome/scss/_core.scss */
 .fa {
   display: inline-block;
@@ -4068,7 +4190,7 @@ li p {
   font-size: 12px;
   padding: 6px 11px;
   color: #fff;
-  background: #05cb95;
+  background: #006cb0 ;
   letter-spacing: 1px;
 }
 
@@ -4082,14 +4204,14 @@ li p {
 /* line 208, ../scss/_base.scss */
 .kafe-btn-mint:hover {
   color: #fff !important;
-  background: #0de5ab;
+  background: #006cb0 ;
   text-decoration: none;
 }
 
 /* line 214, ../scss/_base.scss */
 .kafe-btn-mint-small:hover {
   color: #fff !important;
-  background: #0de5ab;
+  background: #006cb0 ;
   text-decoration: none;
 }
 
@@ -4144,7 +4266,7 @@ a {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   border: none;
-  background: #ebc800 !important;
+  background: #00baf2 !important;
   font-size: 12px;
   
   /* ================================
@@ -4183,7 +4305,7 @@ a {
   height: 100%;
   width: 130px !important;
   padding: 1px 20px 0 40px;
-  color: #818B8D !important;
+  color: #006cb0  !important;
   font-size: 12px !important;
   font-weight: 700;
   outline: none;
@@ -4224,7 +4346,7 @@ a {
 }
 /* line 78, ../scss/_nav.scss */
 #mainNav .nav-item a.nav-link:hover, #mainNav .nav-item a.nav-link:focus, #mainNav .nav-item a.nav-link:active, #mainNav .nav-item a.nav-link.active {
-  color: black  !important;
+  color: #006cb0  !important;
 }
 /* line 87, ../scss/_nav.scss */
 #mainNav .mega-menu .nav-link {
@@ -4292,7 +4414,7 @@ a {
 #mainNav .mega-menu h5 {
   font-size: font-size-blockquote;
   letter-spacing: 0.1em;
-  color: #666f7b;
+  color: #006cb0  ;
   margin: 10px 0;
   font-weight: 700;
 }
@@ -4707,7 +4829,7 @@ a {
   font-size: 1.9rem !important;
   font-weight: 600;
   line-height: 1;
-  color: #d65456 !important;
+  color: #006cb0 !important;
 }
 /* line 528, ../scss/_nav.scss */
 .site-branding .site-title a {
@@ -4717,7 +4839,7 @@ a {
 }
 /* line 533, ../scss/_nav.scss */
 .site-branding .site-title a:hover {
-  color: #d30000 !important;
+  color: #006cb0 !important;
   text-decoration: none;
   transition: 5s ease;
 
@@ -4793,7 +4915,7 @@ a {
   height: 100%;
   width: 500px !important;
   padding: 1px 20px 0 40px;
-  color: #818B8D !important;
+  color: #006cb0  !important;
   font-size: 12px !important;
   font-weight: 700;
   outline: none;
@@ -4806,13 +4928,13 @@ a {
   height: 100%;
   width: 600px !important;
   padding: 1px 20px 0 40px;
-  color: #818B8D !important;
+  color: #006cb0  !important;
   font-size: 12px;
   outline: none;
 }
 /* line 68, ../scss/_nav-2.scss */
 #mainNav-2 .top_search .top_search_icon {
-  color: #1ab394 !important;
+  color: #006cb0  !important;
   font-size: 14px;
   left: 15px;
   position: absolute;
@@ -5331,16 +5453,16 @@ a {
   font-size: 1.9rem !important;
   font-weight: 600;
   line-height: 1;
-  color: #d65456 !important;
+  color:  #00baf2 ; 
 }
 /* line 552, ../scss/_nav-2.scss */
 .site-branding .site-title a {
-  color: #d65456 !important;
+  color: #006cb0  !important;
   text-decoration: none;
 }
 /* line 557, ../scss/_nav-2.scss */
 .site-branding .site-title a:hover {
-  color: #1ab394 !important;
+  color: #00baf2  !important;
   text-decoration: none;
   transition: 5s ease;
 }
@@ -5409,11 +5531,12 @@ a {
   bottom: 14px;
   right: 3%;
   overflow: hidden;
-  width: 50px;
+  width: 73px;
   height: 50px;
   border: none;
   text-indent: 100%;
   cursor: pointer;
+  
 }
 
 /* ------------------ */
@@ -5454,18 +5577,18 @@ a {
 .kafe-btn-default {
   font-family: 'Varela Round', sans-serif;
   letter-spacing: 1px;
-  color: #1ab394;
+  color: #006cb0;
   border-width: 1px;
   border-style: solid;
   background-color: transparent;
-  border: 1px solid #1ab394;
+  border: 1px solid #006cb0 ;
   margin-top: 10px;
   padding: 13px 31px;
 }
 
 /* line 101, ../scss/_footer.scss */
 .kafe-btn-default:hover {
-  background-color: #1ab394;
+  background-color: #00baf2;
   color: #fff !important;
   text-decoration: none;
 }
@@ -5478,14 +5601,14 @@ a {
   margin-top: 23px;
   padding: 13px 31px;
   color: #fff;
-  background: #05cb95;
+  background: #00baf2;
   letter-spacing: 1px;
 }
 
 /* line 119, ../scss/_footer.scss */
 .kafe-btn-mint:hover {
   color: #fff !important;
-  background: #0de5ab;
+  background: #00baf2;
   text-decoration: none;
 }
 
@@ -5746,7 +5869,7 @@ a {
 /* line 214, ../scss/_index.scss */
 .posts .fancy-title-center h2 {
   font-family: 'Montserrat', sans-serif;
-  color: #666f7b !important;
+  color: #006cb0   !important;
   display: inline-block;
   font-size: 20px;
   font-weight: 800;
@@ -7753,4 +7876,9 @@ header.profile-3 .content .social-description p {
 .footer1{
   margin: 0;
   border-bottom: 100%
+}
+.btn{
+  background-color: #006cb0;
+  width: 100px;
+  
 }

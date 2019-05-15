@@ -15,6 +15,7 @@ app.use(express.json());
 
 // Static directory
 app.use(express.static("public"));
+app.use("/uploads", express.static("public/uploads"));
 
 // Routes
 // =============================================================

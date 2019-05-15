@@ -26,15 +26,16 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/cmscom.html"));
   });
 
-  // post route loads post.html
+  // post route view post.html
   app.get("/post", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/post.html"));
   });
 
-  // authors route loads author-manager.html
-  app.get("/authors", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/author-manager.html"));
+  // post route view post.html
+  app.get("/post/view", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/post-2.html"));
   });
+
   // authors route loads author-manager.html
   app.get("/comments", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/comment-manager.html"));

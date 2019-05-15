@@ -1,4 +1,5 @@
 var db = require("../models");
+var userSeed = require("../data/users.json");
 
 module.exports = function(app) {
   app.get("/api/users", function(req, res) {
@@ -32,7 +33,9 @@ module.exports = function(app) {
     });
   });
 
-  app.get("/api/login", function(req, res) {
+  app.post("/api/login", function(req, res) {
+    console.log("userid", req.body.userid);
+    console.log("psw ", req.body.psw);
     db.User.findOne({
       where: {
         userid: req.body.userid,
@@ -54,36 +57,7 @@ module.exports = function(app) {
   });
 
   app.put("/api/users/seed", function(req, res) {
-    db.User.bulkCreate([
-      {
-        name: "Carlos Moreno",
-        avatarUrl:
-          "https://listimg.pinclipart.com/picdir/s/3-39434_mazeo-avatar-medium-600pixel-clipart-vector-clip-art.png",
-        userid: "camoren",
-        psw: "carlos"
-      },
-      {
-        name: "Freddy ",
-        avatarUrl:
-          "https://cdn.kastatic.org/images/avatars/svg/aqualine-sapling.svg",
-        userid: "freddy",
-        psw: "freddy"
-      },
-      {
-        name: "Tyler",
-        avatarUrl:
-          "https://cdn.kastatic.org/images/avatars/svg/aqualine-ultimate.svg",
-        userid: "tyler",
-        psw: "tyler"
-      },
-      {
-        name: "Ahmed",
-        avatarUrl:
-          "https://cdn.dribbble.com/users/364897/screenshots/2912898/personal-avatar.gif",
-        userid: "ahmed",
-        psw: "ahmed"
-      }
-    ]).then(dbUser => {
+    db.User.bulkCreate(userSeed).then(dbUser => {
       res.json(dbUser);
     });
   });
