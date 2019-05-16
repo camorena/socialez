@@ -57,7 +57,7 @@ module.exports = function(app) {
   });
 
   app.put("/api/users/seed", function(req, res) {
-    db.User.bulkCreate(userSeed).then(dbUser => {
+    db.User.bulkCreate(userSeed).then(function(dbUser) {
       res.json(dbUser);
     });
   });

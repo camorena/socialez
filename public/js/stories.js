@@ -40,18 +40,14 @@ $(document).ready(function() {
 
   autenticatedUser();
 
-  getViewedPosts();
+  var userId = getId();
+
+  getUserStories();
 
   getlikedPosts();
 
-  //getlovedPosts();
-
-  //getlaughedPosts();
-
-  //getDislikedPosts();
-
-  function getViewedPosts() {
-    $.get("/api/posts/views", function(data) {
+  function getUserStories() {
+    $.get("/api/posts/user/" + userId, function(data) {
       console.log(data);
       $("a")
         .filter(".post")
@@ -72,17 +68,6 @@ $(document).ready(function() {
           }
           //console.log("Object <img> : ", element, index);
         });
-
-      $("div.t-overlay-text.single-block-padding").each(function(
-        index,
-        element
-      ) {
-        if (index < 3) {
-          $(element).attr("data-post", data[index].id);
-        }
-        // console.log("Object <h3> : ", element, index);
-      });
-
       $("h3")
         .filter(".t-entry-title")
         .each(function(index, element) {
@@ -91,7 +76,7 @@ $(document).ready(function() {
           }
           // console.log("Object <h3> : ", element, index);
         });
-      $(".author")
+      $(".profile-bg-picture")
         .find("img")
         .each(function(index, element) {
           if (index < 3) {
@@ -132,18 +117,10 @@ $(document).ready(function() {
         });
     });
   }
+
   function getlikedPosts() {
-    $.get("/api/posts/likes", function(data) {
+    $.get("/api/posts/liked/" + userId, function(data) {
       //console.log(data);
-      $("div.t-overlay-text.single-block-padding").each(function(
-        index,
-        element
-      ) {
-        if (index < 3) {
-          $(element).attr("data-post", data[index].id);
-        }
-        // console.log("Object <h3> : ", element, index);
-      });
       $(".posted")
         //.filter(".post")
         .each(function(index, element) {
@@ -208,14 +185,18 @@ $(document).ready(function() {
         });
     });
   }
-
-  $("div.t-overlay-text.single-block-padding").on("click", function() {
-    storePostId($(this).attr("data-post"));
-    window.location.ref = "/view";
+  $(".creative-post").on("click", function() {
+    var postId = $(this)
+      .parent()
+      .attr("post");
+    storePostId(postId);
+    window.location.href = "/post";
   });
 
   $(".fa-eye").on("click", function() {
-    var postId = $(this).attr("id");
+    var postId = $(this)
+      .parent()
+      .attr("post");
     API.viewed(postId).then(function(data) {
       knum = formatToUnits(data[0].views, 2);
       var view = document.querySelector("li[post=" + postId + "]");

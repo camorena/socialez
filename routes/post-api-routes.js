@@ -6,20 +6,33 @@
 // =============================================================
 
 // Requiring our models
-var db = require("../models");
-var postSeed = require("../data/posts.json");
 
-console.log("database object model ", db);
+var path = require("path"),
+  fs = require("fs"),
+  formidable = require("formidable"),
+  readChunk = require("read-chunk"),
+  fileType = require("file-type"),
+  db = require("../models"),
+  postSeed = require("../data/posts.json");
+
+//console.log("database object model ", db);
 
 // Routes
 // =============================================================
 module.exports = function(app) {
+  // POST route for saving a new post
+  app.post("/api/posts", function(req, res) {
+    db.Post.create(req.body).then(function(dbPost) {
+      res.json(dbPost);
+    });
+  });
+
   // GET route for getting all of the posts
   app.get("/api/posts/:item", function(req, res) {
     var item = req.params.item;
-    var queryLimit = 6;
+    var queryLimit = 9;
     var queryOrder = [[item, "DESC"]];
-    console.log("QUERY ORDER ", queryOrder);
+    //console.log("QUERY ORDER ", queryOrder);
     var queryAttr = [
       "title",
       "body",
@@ -40,30 +53,85 @@ module.exports = function(app) {
     });
   });
 
-  // Get route for retrieving a single post
-  app.get("/api/posts/:id", function(req, res) {
-    // Here we add an "include" property to our options in our findOne query
-    // We set the value to an array of the models we want to include in a left outer join
-    // In this case, just db.User
-    db.Post.findOne({
+  app.get("/api/posts/user/:user", function(req, res) {
+    var queryLimit = 12;
+    var queryOrder = [["views", "DESC"]];
+    var queryAttr = [
+      "title",
+      "body",
+      "imageUrl",
+      "likes",
+      "dislikes",
+      "loves",
+      "views",
+      "laughs"
+    ];
+    db.Post.findAll({
       where: {
-        id: req.params.id
+        Userid: req.params.user
       },
+      attributes: queryAttr,
+      order: queryOrder,
+      limit: queryLimit,
       include: [db.User]
     }).then(function(dbPost) {
       res.json(dbPost);
     });
   });
 
-  // POST route for saving a new post
-  app.post("/api/posts", function(req, res) {
-    db.Post.create(req.body).then(function(dbPost) {
+  app.get("/api/posts/liked/:user", function(req, res) {
+    var queryLimit = 12;
+    var queryOrder = [["likes", "DESC"]];
+    var queryAttr = [
+      "title",
+      "body",
+      "imageUrl",
+      "likes",
+      "dislikes",
+      "loves",
+      "views",
+      "laughs"
+    ];
+    db.Post.findAll({
+      where: {
+        Userid: req.params.user
+      },
+      attributes: queryAttr,
+      order: queryOrder,
+      limit: queryLimit,
+      include: [db.User]
+    }).then(function(dbPost) {
+      res.json(dbPost);
+    });
+  });
+
+  // Get route for retrieving a single post
+  app.get("/api/posts/view/:id", function(req, res) {
+    //console.log("view query", req.params.id);
+    db.Post.findOne({
+      where: {
+        id: req.params.id
+      },
+      include: [db.User]
+    }).then(function(dbPost) {
+      //console.log("db Post", dbPost);
       res.json(dbPost);
     });
   });
 
   // POST route for saving a new post
   app.post("/api/posts/image", function(req, res) {
+    var form = new formidable.IncomingForm();
+    form.parse(req, function(err, fields, files) {
+      var oldpath = files.filetoupload.path;
+      var newPath = __dirname + "../public/uploads" + files.filetoupload.name;
+      fs.rename(oldpath, newpath, function(err) {
+        if (err) throw err;
+        res.write("File uploaded and moved!");
+        res.end();
+      });
+    });
+
     var body = req.body;
     fs.readFile(req.files.displayImage.path, function(err, data) {
       var newPath = __dirname + "../public/uploads/post_" + req.params.id;
@@ -101,7 +169,7 @@ module.exports = function(app) {
 
   // PUT route for updating Post's likes
   app.put("/api/posts/likes/:id", function(req, res) {
-    console.log("Key ", req.params.id);
+    //console.log("Key ", req.params.id);
     db.Post.findOne({
       where: {
         id: req.params.id

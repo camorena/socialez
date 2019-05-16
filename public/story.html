@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- ==============================================
+          Title and Meta Tags
+          =============================================== -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Socialez</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="description"
+      content="Add your business website description here"
+    />
+    <meta
+      name="keywords"
+      content="Add your, business, website, keywords, here"
+    />
+    <meta name="author" content="Add your business, website, author here" />
+
+    <!-- ==============================================
+          Favicons
+          =============================================== -->
+    <link rel="shortcut icon" href="img/favicons/favicon.ico" />
+    <link rel="apple-touch-icon" href="img/favicons/apple-touch-icon.png" />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="img/favicons/apple-touch-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="img/favicons/apple-touch-icon-114x114.png"
+    />
+
+    <!-- ==============================================
+          CSS
+          =============================================== -->
+    <!-- Style-->
+    <link
+      type="text/css"
+      href="bower_components/bootstrap/dist/css/bootstrap.css"
+      rel="stylesheet"
+    />
+    <link type="text/css" href="css/signup.css" rel="stylesheet" />
+    <link type="text/css" href="css/app.css" rel="stylesheet" />
+
+    <!-- ==============================================
+          Feauture Detection
+          =============================================== 
+        <script src="js/modernizr-custom.js"></script>-->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <!-- ==============================================
+       Navigation Section
+       =============================================== -->
+       <nav class="navbar navbar-light navbar-toggleable-sm bg-faded justify-content-between" id="mainNav">
+          <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+          data-target="#collapsingNavbar2">
+            <span class="navbar-toggler-icon"></span>
+          </button><!-- Button -->
+          <div class="navbar-collapse collapse dual-nav">
+            <ul class="navbar-nav">
+              <!-- Search in right of nav -->
+              <li class="nav-item hidden-xs-down">
+                <form class="top_search clearfix">
+                  <div class="top_search_con">
+                    <input class="s" placeholder="Search Here ..." type="text">
+                    <span class="top_search_icon"><i class="fa fa-search"></i></span>
+                    <input class="top_search_submit" type="submit">
+                  </div>
+                </form>
+              </li>
+              <!-- Search Ends -->
+      
+              <li class="nav-item active">
+                <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+              </li><!-- /nav-item -->
+      
+              <li class="nav-item dropdown hidden-xs mega-menu">
+                <a href="javascript:;" data-toggle="dropdown" class="nav-link dropdown-toggle"
+                  aria-expanded="true">Menu </a>
+                <ul class="dropdown-menu dropdown-menu-yamm">
+                  <li>
+                    <!-- Content container to add padding -->
+                    <div class="yamm-content">
+                      <div class="row">
+                        <div class="col-sm-6 col-md-4 list-unstyled megamenu-list">
+                          <h5 class="m-t-0">SOCIALEZ</h5>
+                          <p class="text-muted font-13">
+                            "Be Simple, Be Social"
+                          </p>
+                        </div><!-- /col-md-3 -->
+                        <ul class="col-sm-6 col-md-3 list-unstyled megamenu-list">
+                          <li>
+                            <h5 class="m-t-0">Pages</h5>
+                          </li>
+                          <li><a href="/">Home</a></li>
+                          <li><a href="/story">New story</a></li>
+                        </ul><!-- /ul -->
+                        <ul class="col-sm-6 col-md-3 list-unstyled megamenu-list">
+                          <li>
+                            <h5 class="m-t-0">&nbsp;</h5>
+                          </li>
+                          <li><a href="/profile">Profile</a></li>
+                          <li><a href="/stories">Your stories</li>
+      
+                        </ul><!-- /ul -->
+                        <ul class="col-sm-6 col-md-2 list-unstyled megamenu-list">
+                          <li>
+                            <h5 class="m-t-0">&nbsp;</h5>
+                          </li>
+                      
+                        
+      
+                        </ul><!-- /ul -->
+      
+                      </div><!-- /row -->
+                    </div><!-- /yam-content -->
+                  </li><!-- /li -->
+                </ul><!-- /ul -->
+              </li><!-- /li -->
+            </ul><!-- /ul -->
+          </div><!-- /navbar-collapse -->
+      
+      
+      
+      
+      
+      
+      
+          <a href="/" class="navbar-brand mr-0 hidden-md-up"> SOCIALEZ</a>
+          <div class="navbar-collapse collapse dual-navv">
+            <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item dropdown mega-avatar">
+                    <a class="nav-link dropdown-toggle clear" data-toggle="dropdown" aria-expanded="true">
+                      <span id="user-avatar" class="avatar w-32"><img src="img/users/2.jpg" class="w-full rounded" width="25" height="25"
+                          alt="..."></span>
+                      <i class="mini"></i>
+                      <!-- hidden-xs hides the username on small devices so only the image appears. -->
+                      <span id="user-name" class="hidden-xs">
+                        Welcome
+                      </span>
+                    </a>
+                    <div class="dropdown-menu w dropdown-menu-scale pull-right">
+                      <a class="dropdown-item" href="/profile"><span>Profile</span></a>
+                      <a id="user-signup" class="dropdown-item" href="#"><span>Become a Member</span></a>
+                      
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="/story"><span>New Story</span></a>
+                      <a class="dropdown-item" href="/stories"><span>Your stories</span></a>								
+                      <div class="dropdown-divider"></div>
+                      <a id="user-state" class="dropdown-item" href="#" data-toggle="modal" data-target=".log-sign">Sign in</a>
+                    </div>
+                  </li><!-- /navbar-item -->
+      
+          </li><!-- /navbar-item -->
+          </ul><!-- /nav -->
+          </div><!-- /navbar-collapse -->
+      
+          <!-- Modal -->
+          <div class="modal fade bs-modal-sm log-sign" id="myModal" tabindex="-1" role="dialog"
+            aria-labelledby="mySmallModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-sm">
+              <div class="modal-content">
+      
+                <div class="bs-example bs-example-tabs">
+                  <ul id="myTab" class="nav nav-tabs">
+                    <li id="tab1" class=" active tab-style login-shadow "><a href="#signin"
+                        data-toggle="tab">Log In</a></li>
+                    <li id="tab2" class=" tab-style login-shadow "><a href="#signout"
+                        data-toggle="tab">Log Out</a></li>
+              <!-- 			<li id="tab3" class=" tab-style "><a href="#signup" data-toggle="tab">Sign Up</a></li>-->
+      
+                  </ul>
+                </div>
+                <div class="modal-body">
+                  <div id="myTabContent" class="tab-content">
+      
+                    <div class="tab-pane fade active in" id="signin">
+                      <form class="form-horizontal">
+                        <fieldset>
+                          <!-- Sign In Form -->
+                          <!-- Text input-->
+      
+                          <div class="group">
+                            <input id="singnin-id" required="" class="input" type="text"><span
+                              class="highlight"></span><span class="bar"></span>
+                            <label class="label" for="date">Userid</label></div>
+      
+      
+                          <!-- Password input-->
+                          <div class="group">
+                            <input id="singnin-psw" required="" class="input" type="password"><span
+                              class="highlight"></span><span class="bar"></span>
+                            <label class="label" for="date">Password</label>
+                          </div>
+                          <em>minimum 6 characters</em>
+      
+                          <!-- Button -->
+                          <div class="control-group">
+                            <label class="control-label" for="signin"></label>
+                            <div class="controls">
+                              <button id="signin-btn" name="signin" class="btn btn-primary btn-block">Log
+                                In</button>
+      
+                            </div>
+                          </div>
+                        </fieldset>
+                      </form>
+                    </div>
+                    <div class="tab-pane fade" id="signout">
+                        <form class="form-horizontal">
+                          <fieldset>
+                            <!-- Sign In Form -->
+                            <!-- Text input-->
+        
+                            <div class="group">
+          
+                              <label class="label" for="date">Quit Session</label></div>
+        
+                            <!-- Button -->
+                            <div class="control-group">
+                              <label class="control-label" for="signout"></label>
+                              <div class="controls">
+                                <button id="signout-btn" name="signout" class="btn btn-primary btn-block">Log
+                                  Out</button>
+        
+                              </div>
+                            </div>
+                          </fieldset>
+                        </form>
+                      </div>
+      
+                    <div class="tab-pane fade" id="signup">
+                      <form class="form-horizontal">
+                        <fieldset>
+                          <!-- Sign Up Form -->
+                          <!-- Text input-->
+                          <div class="group">
+                            <input id"userFirst" required="" class="input" type="text"><span
+                              class="highlight"></span><span class="bar"></span>
+                            <label class="label" for="date">First Name</label></div>
+      
+                          <!-- Text input-->
+                          <div class="group">
+                            <input id"userLast" required="" class="input" type="text"><span
+                              class="highlight"></span><span class="bar"></span>
+                            <label class="label" for="date">Last Name</label></div>
+      
+                          <!-- Password input-->
+                          <div class="group">
+                            <input id="userid"required="" class="input" type="text"><span
+                              class="highlight"></span><span class="bar"></span>
+                            <label class="label" for="date">Email</label></div>
+      
+                          <!-- Text input-->
+                          <div class="group">
+                            <input id="psw"required="" class="input" type="password"><span
+                              class="highlight"></span><span class="bar"></span>
+                            <label class="label" for="date">Password</label></div>
+                          <em>1-8 Characters</em>
+        
+                          <!-- Button -->
+                          <div class="control-group">
+                            <label class="control-label" for="confirmsignup"></label>
+                            <div class="controls">
+                              <button id="confirmsignup" name="confirmsignup"
+                                class="btn btn-primary btn-block">Sign Up</button>
+                            </div>
+                          </div>
+                        </fieldset>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+                <!--<div class="modal-footer">
+            <center>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </center>
+            </div>-->
+              </div>
+            </div>
+          </div>	
+          <!--modal2-->
+          </li><!-- /navbar-item -->
+          </ul><!-- /nav -->
+          </div><!-- /navbar-collapse -->
+        </nav><!-- /navbar-item -->
+      
+      
+        <!-- ==============================================
+           Site Branding Section
+         =============================================== -->    
+
+    <!-- ==============================================
+         Site Branding Section
+       =============================================== -->
+    <center>
+      <div class="site-branding" class="col-md-4">
+        <div class="container">
+          <h1 class="site-title"><a rel="home">SOCIALEZ</a></h1>
+          <p class="site-description">Be Simple, Be Social.</p>
+        </div>
+        <!-- /container -->
+      </div>
+      <!-- .site-branding -->
+    </center>
+    <div class="container post">
+      <div class="row">
+        <div class="container hidden">
+          <div class="row">
+            <div class="col-md-6 offset-md-3">
+              <form id="cms">
+                <div class="form-group">
+                  <input
+                    placeholder="Post Title"
+                    type="text"
+                    class="form-control"
+                    id="title"
+                  />
+                  <br />
+
+                  <textarea
+                    placeholder="Post Body"
+                    class="form-control"
+                    rows="10"
+                    id="body"
+                  ></textarea>
+                </div>
+              </form>
+              <div
+                class="custom-file-container"
+                data-upload-id="myUniqueUploadId"
+              >
+                <label
+                  >Upload Image
+                  <a
+                    href="javascript:void(0)"
+                    class="custom-file-container__image-clear"
+                    title="Clear Image"
+                    >&times;</a
+                  ></label
+                >
+
+                <label class="custom-file-container__custom-file">
+                  <input
+                    type="file"
+                    class="custom-file-container__custom-file__custom-file-input"
+                    accept="*"
+                    multiple
+                    aria-label="Choose File"
+                  />
+                  <input type="hidden" name="MAX_FILE_SIZE" value="10485760" />
+                  <span
+                    class="custom-file-container__custom-file__custom-file-control"
+                  ></span>
+                </label>
+                <div class="custom-file-container__image-preview"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- /w -->
+      </div>
+    </div>
+    <!-- Custom Script -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/tether/dist/js/tether.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.0/moment.min.js"
+      type="text/javascript"
+    ></script>
+    <script src="js/post.js"></script>
+    <script src="https://unpkg.com/file-upload-with-preview@4.0.2/dist/file-upload-with-preview.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/story.js"></script>
+    <script src="js/medium.js"></script>
+  </body>
+</html>

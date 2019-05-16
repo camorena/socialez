@@ -11,33 +11,28 @@ var path = require("path");
 module.exports = function(app) {
   // Each of the below routes just handles the HTML page that the user gets sent to.
 
-  // index route loads view.html
+  // index route loads post.html
   app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/post.html"));
+    res.sendFile(path.join(__dirname, "../public/index.html"));
   });
 
-  // cms route loads cms.html
-  app.get("/cms", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/cms.html"));
+  // get route view post.html
+  app.get("/story", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/story.html"));
   });
 
-  // cms comments route loads cmscom.html
-  app.get("/cmscom", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/cmscom.html"));
+  // get route view post.html
+  app.get("/view", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/view_story.html"));
   });
 
-  // post route view post.html
-  app.get("/post", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/post.html"));
+  // get route view user stories.html
+  app.get("/stories", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/stories.html"));
   });
 
-  // post route view post.html
-  app.get("/post/view", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/post-2.html"));
-  });
-
-  // authors route loads author-manager.html
-  app.get("/comments", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/comment-manager.html"));
+  // get route view user stories.html
+  app.get("/profile", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/profile.html"));
   });
 };
